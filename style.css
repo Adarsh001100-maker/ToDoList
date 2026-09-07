@@ -1,0 +1,114 @@
+/* Simple responsive styling for To-Do list */
+
+:root{
+  --bg:#f7f7fb;
+  --card:#fff;
+  --accent:#4a90e2;
+  --muted:#666;
+  --danger:#e34a4a;
+  --radius:8px;
+}
+
+*{box-sizing:border-box;font-family:Inter,system-ui,Segoe UI,Roboto,"Helvetica Neue",Arial;}
+
+body{
+  margin:0;
+  background:linear-gradient(180deg,#eef2fb 0%,var(--bg) 100%);
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+}
+
+.container{
+  width:100%;
+  max-width:600px;
+  background:var(--card);
+  border-radius:var(--radius);
+  box-shadow:0 6px 24px rgba(20,20,60,0.08);
+  padding:24px;
+}
+
+h1{
+  margin:0 0 16px 0;
+  font-size:1.5rem;
+  color:#111827;
+}
+
+.input-area{
+  display:flex;
+  gap:8px;
+  margin-bottom:16px;
+}
+
+#taskInput{
+  flex:1;
+  padding:10px 12px;
+  border:1px solid #e6e9ef;
+  border-radius:6px;
+  font-size:1rem;
+}
+
+.input-area button{
+  background:var(--accent);
+  color:#fff;
+  border:none;
+  padding:10px 14px;
+  border-radius:6px;
+  cursor:pointer;
+  font-weight:600;
+}
+
+.input-area button:hover{opacity:0.95}
+
+#taskList{
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+.task-item{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:10px 12px;
+  border-radius:6px;
+  border:1px solid #f0f2f6;
+  margin-bottom:8px;
+  background:linear-gradient(180deg,rgba(255,255,255,0.6),transparent);
+}
+
+.task-checkbox{width:18px;height:18px;flex:0 0 18px}
+
+.task-text{flex:1;color:#111827;word-break:break-word}
+
+.task-text.completed{
+  text-decoration:line-through;
+  color:var(--muted);
+}
+
+.task-btn{
+  background:transparent;
+  border:1px solid #e6e9ef;
+  padding:6px 8px;
+  border-radius:6px;
+  cursor:pointer;
+  font-size:0.9rem;
+}
+
+.task-btn.edit{background:#fff}
+.task-btn.delete{border-color:var(--danger);color:var(--danger)}
+
+.edit-input{
+  width:100%;
+  padding:8px 10px;
+  border:1px solid #dfe6f2;
+  border-radius:6px;
+}
+
+.empty{
+  color:var(--muted);
+  text-align:center;
+  padding:12px;
+}
